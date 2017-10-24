@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GPT4生产数据管理</title>
+        <meta charset="utf-8">
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <% include ./common/res.html %>
+    </head>
+
+    <body class="">
+
+        <!-- top 导航 -->
+        <% include ./common/top.html %>
+
+        <!-- 菜单导航 -->
+        <% include ./common/nav.html %>
+
+        <div class="content">
+
+            <div class="header">
+                <div class="stats">
+                    <p class="stat"><span class="number">53</span>标签</p>
+                    <p class="stat"><span class="number">27</span>任务</p>
+                    <p class="stat"><span class="number">15</span>待处理</p>
+                </div>
+
+                <h1 class="page-title">GPT4生产数据管理</h1>
+            </div>
+            <ul class="breadcrumb">
+                <li><a href="/">首页</a> <span class="divider">/</span></li>
+                <li class="active">用户列表</li>
+            </ul>
+
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="btn-toolbar">
+                        <a href="/gpt4/create">
+                            <button class="btn btn-primary"><i class="icon-plus"></i> 新建</button>
+                        </a>
+                        <div class="btn-group"></div>
+                    </div>
+
+                    <div class="well">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>SN</th>
+                                    <th>PN</th>
+                                    <th>MAC</th>
+                                    <th>TEI</th>
+                                    <th>版本</th>
+                                    <th>触屏</th>
+                                    <th>键盘</th>
+                                    <th>蓝牙</th>
+                                    <th>WIFI</th>
+                                    <th>GPS</th>
+                                    <th>NFC</th>
+                                    <th>振动器</th>
+                                    <th>喇叭</th>
+                                    <th>受话器</th>
+                                    <th>音频回环1</th>
+                                    <th>音频回环2</th>
+                                    <th>重力感应</th>
+                                    <th>靠近感应</th>
+                                    <th>光感应</th>
+                                    <th>背光</th>
+                                    <th>LCD</th>
+                                    <th>摄像头</th>
+                                    <th>键盘灯</th>
+                                    <th>闪光灯</th>
+                                    <th>USB</th>
+                                    <th>SIM卡</th>
+                                    <th>SD卡</th>
+                                    <th style="width: 26px;"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                            <!-- 输出内容 -->
+                            <% for(var i=0; i<gpt4_arr.length; i++) {%>
+                                <tr>
+                                    <td><%=gpt4_arr[i].id %></td>
+                                    <td><%=gpt4_arr[i].sn %></td>
+                                    <td><%=gpt4_arr[i].pn %></td>
+                                    <td><%=gpt4_arr[i].mac %></td>
+                                    <td><%=gpt4_arr[i].tei %></td>
+                                    <td><%=gpt4_arr[i].imei %></td>
+                                    <td><%=gpt4_arr[i].ver %></td>
+                                    <td><%=gpt4_arr[i].tp %></td>
+                                    <td><%=gpt4_arr[i].keypad %></td>
+                                    <td><%=gpt4_arr[i].bt %></td>
+                                    <td><%=gpt4_arr[i].wifi %></td>
+                                    <td><%=gpt4_arr[i].gps %></td>
+                                    <td><%=gpt4_arr[i].nfc %></td>
+                                    <td><%=gpt4_arr[i].vib %></td>
+                                    <td><%=gpt4_arr[i].spk %></td>
+                                    <td><%=gpt4_arr[i].receiver %></td>
+                                    <td><%=gpt4_arr[i].audloop1 %></td>
+                                    <td><%=gpt4_arr[i].audloop2 %></td>
+                                    <td><%=gpt4_arr[i].gsensor %></td>
+                                    <td><%=gpt4_arr[i].proximity %></td>
+                                    <td><%=gpt4_arr[i].lightsensor %></td>
+                                    <td><%=gpt4_arr[i].backlight %></td>
+                                    <td><%=gpt4_arr[i].lcdpanel %></td>
+                                    <td><%=gpt4_arr[i].camera %></td>
+                                    <td><%=gpt4_arr[i].keyled %></td>
+                                    <td><%=gpt4_arr[i].flash %></td>
+                                    <td><%=gpt4_arr[i].usb %></td>
+                                    <td><%=gpt4_arr[i].sim %></td>
+                                    <td><%=gpt4_arr[i].sdcard %></td>
+                                    <td>
+                                        <a onclick="delGpt4Confirm(<%=gpt4_arr[i].id %>)" href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                                    </td>
+                                </tr>
+                            <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <ul>
+                            <li><a href="#">Prev</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 删除确认框 -->
+                    <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3 id="myModalLabel">确定删除</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p class="error-text"><i class="icon-warning-sign modal-icon"></i>确定删除用户?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+                            <button class="btn btn-danger" data-dismiss="modal" onclick="delGpt4()">删除</button>
+                        </div>
+                        <input type="hidden" value="" id="delgpt4Id">
+                    </div>
+                    <script type="text/javascript">
+                        function delGpt4Confirm(id){
+                            $('#delgpt4Id').val(id);
+                        }
+                        function delGpt4(){
+                           window.location.href='/gpt4/delete?id=' + $('#delgpt4Id').val();
+                        }
+                    </script>
+
+                    <% include ./common/foot.html %>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <title>用户管理</title>
+        <meta charset="utf-8">
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <% include ./common/res.html %>
+   </head>
+   
+   <body class=""> 
+  
+    <!-- top 导航 -->
+    <% include ./common/top.html %>
+
+	<!-- 菜单导航 -->
+    <% include ./common/nav.html %>
+        
+    <div class="content">
+        
+        <div class="header">
+            <div class="stats">
+            <p class="stat"><span class="number">53</span>标签</p>
+            <p class="stat"><span class="number">27</span>任务</p>
+            <p class="stat"><span class="number">15</span>待处理</p>
+        </div>
+
+        <h1 class="page-title">用户管理</h1>
+        </div>
+            <ul class="breadcrumb">
+            <li><a href="/">首页</a> <span class="divider">/</span></li>
+            <li><a href="/gpt4">用户列表</a> <span class="divider">/</span></li>
+            <li class="active">用户添加（修改）</li>
+        </ul>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+				
+				<form id="tab" action="/gpt4/create/" method="post">
+			        <label>SN</label>
+			        <input name="sn" type="text" value="" class="input-xlarge">
+
+                    <label>PN</label>
+                    <input name="pn" type="text" value="" class="input-xlarge">
+
+                    <label>MAC地址</label>
+                    <input name="mac" type="text" value="" class="input-xlarge">
+
+                    <label>TEI</label>
+                    <input name="tei" type="text" value="" class="input-xlarge">
+
+                    <label>IMEI</label>
+                    <input name="imei" type="text" value="" class="input-xlarge">
+
+                    <label>版本号</label>
+                    <input name="ver" type="text" value="" class="input-xlarge">
+
+                    <label>触屏</label>
+                    <input name="tp" type="text" value="" class="input-xlarge">
+
+                    <label>键盘</label>
+                    <input name="keypad" type="text" value="" class="input-xlarge">
+
+                    <label>蓝牙</label>
+                    <input name="bt" type="text" value="" class="input-xlarge">
+
+                    <label>WIFI</label>
+                    <input name="wifi" type="text" value="" class="input-xlarge">
+
+                    <label>GPS</label>
+                    <input name="gps" type="text" value="" class="input-xlarge">
+
+                    <label>NFC</label>
+                    <input name="nfc" type="text" value="" class="input-xlarge">
+
+                    <label>振动器</label>
+                    <input name="vib" type="text" value="" class="input-xlarge">
+
+                    <label>喇叭</label>
+                    <input name="spk" type="text" value="" class="input-xlarge">
+
+                    <label>受话器</label>
+                    <input name="receiver" type="text" value="" class="input-xlarge">
+
+                    <label>音频回环1</label>
+                    <input name="audloop1" type="text" value="" class="input-xlarge">
+
+                    <label>音频回环2</label>
+                    <input name="audloop2" type="text" value="" class="input-xlarge">
+
+                    <label>重力感应</label>
+                    <input name="gsensor" type="text" value="" class="input-xlarge">
+
+                    <label>靠近感应</label>
+                    <input name="proximity" type="text" value="" class="input-xlarge">
+
+                    <label>光感应</label>
+                    <input name="lightsensor" type="text" value="" class="input-xlarge">
+
+                    <label>背光</label>
+                    <input name="backlight" type="text" value="" class="input-xlarge">
+
+                    <label>LCD</label>
+                    <input name="lcdpanel" type="text" value="" class="input-xlarge">
+
+                    <label>摄像头</label>
+                    <input name="camera" type="text" value="" class="input-xlarge">
+
+                    <label>键盘灯</label>
+                    <input name="keyled" type="text" value="" class="input-xlarge">
+
+                    <label>闪光灯</label>
+                    <input name="flash" type="text" value="" class="input-xlarge">
+
+                    <label>USB</label>
+                    <input name="usb" type="text" value="" class="input-xlarge">
+
+                    <label>SIM卡</label>
+                    <input name="sim" type="text" value="" class="input-xlarge">
+
+                    <label>SD卡</label>
+                    <input name="sdcard" type="text" value="" class="input-xlarge">
+
+                    <div class="btn-toolbar">
+					    <input type="submit" class="btn btn-primary"><i class="icon-save"></i> 保存</input>
+					</div>
+			        
+			    </form>                
+
+                <% include ./common/foot.html %>
+           </div>
+    	</div>
+	</div>
+  </body>
+</html>
